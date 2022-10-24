@@ -7,7 +7,5 @@ envoy:
 .PHONY: envoy
 
 kill:
-	python3 -m venv .venv
-	.venv/bin/pip install redis
-	.venv/bin/python kill.py
+	(cat commands; sleep 2) | nc localhost 6379
 .PHONY: kill
